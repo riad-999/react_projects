@@ -1,7 +1,16 @@
 import React, { useState } from 'react';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
-const Question = () => {
-  return <h2>question component</h2>;
-};
-
+const Question = (props) => {
+  const {info,title} = props
+  const [answer,set_answer] = useState(false);
+  return <div className="question">
+    <header>
+      {title}
+    </header>
+    <button className="btn" onClick={() => {set_answer(!answer)}}>
+      {answer ? <AiOutlineMinus /> : <AiOutlinePlus />}
+    </button>
+    {answer && <p>{info}</p>}
+  </div>;
+}
 export default Question;
