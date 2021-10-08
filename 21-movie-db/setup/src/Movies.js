@@ -16,7 +16,7 @@ const Movies = () => {
       movies.map(movie => {
         const {imdbID:id,Poster:poster,Title:title,Year:year}
         = movie ;
-        return <Link to={`/movie/${id}`} className="movie" >
+        return <Link to={`/movie/${id}`} className="movie" key={id}>
             <article>
               <img src={poster === 'N/A' ? url : poster} alt={title}></img>
               <div className="movie-info">
